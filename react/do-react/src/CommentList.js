@@ -2,10 +2,23 @@ import React from 'react';
 
 function CommentList() {
     return (
-        <div>
-           CommentList
-         
-        </div>
+       <ul>
+           <li>
+               用户名：123435
+           </li>
+           <li>
+               用户名：123435
+           </li>
+           <li>
+               用户名：123435
+           </li>
+           <li>
+               用户名：123435
+           </li>
+           <li>
+               用户名：123435
+           </li>
+       </ul>
     )
 }
 
