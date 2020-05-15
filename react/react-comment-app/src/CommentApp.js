@@ -5,13 +5,16 @@ import CommentList from './CommentList';
 //let {a} = {a: 1, b: 2, c: 3}
 
 class CommentApp extends Component {
-    rend() {//接口
+    render() {//接口
         return (
-            <div>
-               <CommentInput />,
-               <CommentList />,
+            <div className="wrapper">
+               <CommentInput onSubmit={this.handleSubmitComment.bind(this)}/>
+               <CommentList />
             </div>
         )
+    }
+    handleSubmitComment(comment) {
+        console.log(comment);
     }
 }
 

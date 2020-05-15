@@ -1,7 +1,7 @@
 import React, { Component } from 'react';//按需加载 es6 解构
 
 class CommentList extends Component {
-    rend() {
+    render() {
         return(
             <div>
                CommentList 
