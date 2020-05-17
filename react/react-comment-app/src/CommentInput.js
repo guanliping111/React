@@ -50,7 +50,10 @@ class CommentInput extends Component {
      handleSubmit(event) {
          //console.log(this.state);
          const {username, content} = this.state;
-         this.props.onSubmit({username,content})
+         const {onSubmit} = this.props;
+         //props 传递数据
+         console.log(this.props, '+++++++++++');
+         onSubmit({username,content})
          this.setState({
              content:''
          })

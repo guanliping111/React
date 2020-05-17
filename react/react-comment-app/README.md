@@ -7,9 +7,23 @@
 4. webpack 打包工具  JS编译过程
 
 - 组件思想 把页面开发当成搭积木
+父组件CommentApp
+子组件
   CommentInput
   CommentList
    Comment
 
+  
 
+- react组件
+ 1. render:负责页面输出  
+ 2. state:内部数据   
+ 3. props:外部数据
+
+- React 新的前端开发框架 新思想
+- DOM API 过时 性能低下
+ CommentList.js 动态添加评论， appendChild
+ 1. component 组件数 父组件 子组件 props state
+ 2. props: 传参
+ 3. state 自由状态 ，setState,用到相应状态的组件会自动刷新，响应式开发
 
