@@ -1,15 +1,28 @@
 import React from 'react';
-import logo from '../../logo.svg'
+import { DatePicker } from 'antd';
+import logo from '../../logo.svg';
 
 class HomeHeader extends React.Component {
+  handleDateChange = (date, dateString) => {
+    console.log(date, dateString);
+  }
   render() {
-    <React.Fragment>
-      <div className='Content'>
-        <img src={logo} alt="" />
-      </div>
-    </React.Fragment>
+    return (
+      <React.Fragment>
+        <div className="row justify-content-center">
+          <img src={logo} alt=""/>
+        </div>
+        <div className="row">
+          <div className="col col-3 offset-3">
+            {/* onChange： 时间发生变化的回调 */}
+            <DatePicker picker="month" onChange={this.handleDateChange}/>
+          </div>
+          <div className="col col-6 align-self-center">
+          </div>
+        </div>
+      </React.Fragment>
+    )
   }
 }
-
 
 export default HomeHeader;
