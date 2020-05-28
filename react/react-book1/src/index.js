@@ -1,56 +1,34 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
 
-class Title extends Component {
-  handleClickOnTitle (e) {
-    console.log(e.target.innerHTML)
+class LikeButton extends Component {
+  constructor () {
+    super()
+    this.state = { isLiked: false }
+  }
+
+  handleClickOnLikeButton () {
+    this.setState({
+      isLiked: !this.state.isLiked
+    })
   }
 
   render () {
+    const likedText = this.props.likedText || '取消'
+    const unlikedText = this.props.unlikedText || '点赞'
     return (
-      <h1 onClick={this.handleClickOnTitle}>React 小书</h1>
+      <button onClick={this.handleClickOnLikeButton.bind(this)}>
+        {this.state.isLiked ? likedText : unlikedText} 👍
+      </button>
     )
   }
 }
-
-class Header extends Component {
-  render () {
-    return (
-    <div>
-      <Title />
-      <h2>This is Header</h2>
-    </div>
-    )
-  }
-}
-
-class Main extends Component {
-  render () {
-    return (
-    <div>
-      <h2>This is main content</h2>
-    </div>
-    )
-  }
-}
-
-class Footer extends Component {
-  render () {
-    return (
-    <div>
-      <h2>This is footer</h2>
-    </div>
-    )
-  }
-}
-
 class Index extends Component {
   render () {
     return (
       <div>
-        <Header />
-        <Main />
-        <Footer />
+        <LikeButton />
       </div>
     )
   }

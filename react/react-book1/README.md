@@ -1,5 +1,6 @@
 # 2020-5-28
 # react.js小书
+  http://huziketang.mangojuice.top/books/react
 ## 第一 阶段
 ### 使用JSX描述UI的信息
    - 只要你要写 React.js 组件，那么就必须要引入React, Component（组件父类） 组件
@@ -11,45 +12,7 @@
     1. DOM 元素包含的信息只有三个：标签名，属性，子元素
 
     2. 编译的过程会把类似 HTML 的 JSX 结构转换成 JavaScript 的对象结构。
-    JSX 结构
-    ```js
-      class Header extends Component {
-      render () {
-         return (
-            <div>
-            <h1 className='title'>React 小书</h1>
-            </div>
-         )
-      }
-      }
-      ReactDOM.render(
-      <Header />,
-      document.getElementById('root')
-      )
-    ```
-
-     编译后 => JavaScript 的对象结构
-    ```js
-      class Header extends Component {
-      render () {
-         return (
-         React.createElement(
-            "div",
-            null,
-            React.createElement(
-               "h1",
-               { className: 'title' },
-               "React 小书"
-            )
-            )
-         )
-      }
-      }
-      ReactDOM.render(
-      React.createElement(Header, null), 
-      document.getElementById('root')
-      );
-    ```
+    
    **所谓的 JSX 其实就是 JavaScript 对象**
    
      ReactDOM.render 功能就是把组件渲染并且构造 DOM 树，然后插入到页面上某个特定的元素上（在这里是 id 为 root 的 div 元素）。
@@ -64,6 +27,7 @@
       React.js 可以用 JSX 来描述你的组件长什么样的。
       JSX 在编译的时候会变成相应的 JavaScript 对象描述。
       react-dom 负责把这个用来描述 UI 信息的 JavaScript 对象变成 DOM 元素，并且渲染到页面上。
+
 ### 组件的render方法
  1. 一个组件类必须要实现一个 render 方法，且必须要返回一个 JSX 元素。
  但这里要注意的是，必须要用一个外层的 JSX 元素把所有内容包裹起来。
@@ -94,3 +58,47 @@
  2. 在 React.js 不需要手动调用浏览器原生的 addEventListener 进行事件监听。React.js 帮我们封装好了一系列的 on* 的属性，当你需要为某个元素监听某个事件的时候，只需要简单地给它加上 on* 就可以了。而且你不需要考虑不同浏览器兼容性的问题，React.js 都帮我们封装好这些细节了
  3. 这些 on* 的事件监听只能用在普通的 HTML 的标签上，而不能用在组件标签上。
  #### event 对象
+  React.js 中的 event 对象并不是浏览器提供的，而是它自己内部所构建的。React.js 将浏览器原生的 event 对象封装了一下，对外提供统一的 API 和属性，这样你就不用考虑不同浏览器的兼容性问题。这个 event 对象是符合 W3C 标准（ W3C UI Events ）的，它具有类似于event.stopPropagation、event.preventDefault 这种常用的方法。
+
+#### 关于事件中的 this
+   1. 在handleClickOnTitle 中把 this 打印出来，是 null 或者 undefined。
+   2. 这是因为 React.js 调用你所传给它的方法的时候，并不是通过对象方法的方式调用（this.handleClickOnTitle），而是直接通过函数调用 （handleClickOnTitle），所以事件监听函数内并不能通过 this 获取到实例。
+   3. 如果你想在事件函数当中使用当前的实例，你需要手动地将实例方法 bind 到当前实例上再传入给 React.js。
+   ```js
+   <h1 onClick={this.handleClickOnTitle.bind(this)}>React 小书</h1>
+   ```
+
+#### 总结
+   1. 为 React 的组件添加事件监听是很简单的事情，你只需要使用 React.js 提供了一系列的 on* 方法即可。
+   2. React.js 会给每个事件监听传入一个 event 对象，这个对象提供的功能和浏览器提供的功能一致，而且它是兼容所有浏览器的。
+   3. React.js 的事件监听方法需要手动 bind 到当前实例，这种模式在 React.js 中非常常用。
+
+### 组件的 state 和 setState
+   1. state
+     - 用来存储状态的变化   
+      如点赞按钮，可以有“已点赞”和“未点赞”状态，并且可以在这两种状态之间进行切换
+   2. setState 接受对象参数
+     - setState 方法由父类 Component 所提供
+     - 当我们调用这个函数的时候，React.js 会更新组件的状态 state ，
+       并且重新调用render方法，然后再把render方法所渲染的最新的内容显示到页面上。
+     - 修改了组件的状态, 不能直接用 this.state = xxx
+       一定要使用 React.js 提供的 setState 方法，它接受一个对象或者函数作为参数。
+     - setState 可以接受一个函数作为参数
+         1. 当你调用 setState 的时候，React.js 并不会马上修改 state。而是把这个对象放到一个更新队列里面，稍后才会从队列当中把新的状态提取出来合并到 state 当中，然后再触发组件更新。
+         2. React.js 会把上一个 setState 的结果传入这个函数，你就可以使用该结果进行运算、操作，然后返回一个对象作为更新 state 的对象：
+     - setState 合并
+         1. React.js 内部会把 JavaScript 事件循环中的消息队列的同一个消息中的 setState 都进行合并以后再重新渲染组件。
+         2. 在使用 React.js 的时候，并不需要担心多次进行 setState 会带来性能问题。
+
+###  配置组件的 props
+ 1. 怎么把 props 传进去
+   在使用一个组件的时候，可以把参数放在标签的属性当中，所有的属性都会作为 props 对象的键值：
+ 2. 默认配置 defaultProps
+ 3. props 不可变
+   不能改变一个组件被渲染的时候传进来的 props。
+   组件的使用者可以主动地通过重新渲染的方式把新的 props 传入组件当中，这样这个组件中由 props 决定的显示形态也会得到相应的改变。
+ 4. 总结
+   - 为了使得组件的可定制性更强，在使用组件的时候，可以在标签上加属性来传入配置参数。
+   - 组件可以在内部通过 this.props 获取到配置参数，组件可以根据 props 的不同来确定自己的显示形态，达到可配置的效果。
+   - 可以通过给组件添加类属性 defaultProps 来配置默认参数。
+   - props 一旦传入，你就不可以在组件内部对它进行修改。但是你可以通过父组件主动重新渲染的方式来传入新的 props，从而达到更新的效果。
