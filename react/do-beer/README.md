@@ -9,3 +9,4 @@ beer  搜索，  -> 列表  ->  点进去  创建路由
 语义化设计URL    /post/:postId
 
 1. 把应用架构搭好， 创建路由  yarn add react-router-dom
+2. 传参的类型检测  yarn add prop-types

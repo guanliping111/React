@@ -61,4 +61,4 @@ React.js 将组件渲染，并且构造 DOM 元素然后塞入页面的过程称
 
 ### PropTypes 和组件参数验证
 安装一个 React 提供的第三方库 prop-types：npm install --save prop-types
- 验证 props 的参数类型
+ 验证 props 的参数类型 yarn add prop-types
