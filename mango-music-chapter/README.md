@@ -9,3 +9,11 @@
   只有一个页面的应用
 
 - 根据界面 可以分析出头尾不变 由Route 显示不同的页面
+- Loading 组件
+  哪个目录下创建
+  components 路由级别组件
+  Loading 服务于任何 list api列表组件 通用组件common
+
+  1. 数据请求阶段， 显示loading
+  2. 数据获取后，隐藏它
+  
