@@ -20,4 +20,10 @@
 
   - api/ 分层的的能力 
     每个路由模块页面独立一个Js文件
+
+  - 长的列表页面，在移动端 支持scroll
+  https://github.com/ustbhuangyi/better-scroll/blob/master/README_zh-CN.md
+  
+  better-scroll 文档
+  https://ustbhuangyi.github.io/better-scroll/doc/zh-hans/installation.html
   
