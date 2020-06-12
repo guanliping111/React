@@ -5,7 +5,6 @@ import { Map, fromJS } from 'immutable';
 import logo from './logo.svg';
 import './App.css';
 // 原生的 js 结合 react 怎么写 不变的代码
-// 
 class App extends React.Component {
   state = {
     loginInfo: {
@@ -48,8 +47,7 @@ class App extends React.Component {
       }
       // useInfo2.skill && (useInfo2.skill.excellent = 'react');
       let excellentSkills = this.state.userInfo.getIn(['skills', 'excellent'])
-      // push 不是对原来这份数据进行更新
-      // 
+      // push 不是对原来这份数据进行更新  
       let newexcellentSkills = excellentSkills.push('js')
       const useInfo1 = this.state.userInfo.setIn(['skills', 'excellent'],
        newexcellentSkills);
