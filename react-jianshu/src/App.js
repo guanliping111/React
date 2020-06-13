@@ -1,25 +1,24 @@
 import React from 'react';
+import { fromJS } from 'immutable';
+import ImmutableComponent from './componets/common';
 import logo from './logo.svg';
 import Header from './componets/Header'
 import './App.css';
 
 
-class App extends React.Component {
+class App extends ImmutableComponent{
   state = {
-    title: '123'
-  }
-  shouldComponentUpdate() {
-
-
+    title: fromJS('123')
   }
   componentDidMount() {
     setTimeout(() => {
       this.setState({
-        title: '123'
+        title: fromJS('89890')
       })
     }, 3000)
   }
   render() {
+    console.log('app render');
     return (
       <div>
         123456
