@@ -28,7 +28,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchHomeList() {
       dispatch(getHomeList)
-    }
+    },
+    dispatch
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
