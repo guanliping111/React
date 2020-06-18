@@ -1,25 +1,19 @@
 import React from 'react';
+import { Provider } from 'mobx-react';
+import articleStore from './store/articleStore';
+import Home from './pages/home';
 import logo from './logo.svg';
+import './util/request';
 import './App.css';
 
+const store = {
+  articleStore
+}
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider {...store}>
+      <Home />
+    </Provider>
   );
 }
 
