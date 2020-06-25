@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { inject, observer} from 'mobx-react';
-import { Pagination } from 'antd';//分页器
+import { Pagination } from 'antd';
 
 // 想要哪个页面的数据 注入谁
 @inject('articleStore')

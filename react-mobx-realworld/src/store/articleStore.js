@@ -6,11 +6,13 @@ class ArticleStore {
   // observable state 用 observable 修饰过的变量 变量被修改了 页面就会就会重新渲染
   // es @ 装饰器
   LIMIT = LIMIT
+  // react state 响应式 VM
   @observable articles = {
     all: []
   }
   @observable total = 0;
   // 繁杂的逻辑 尽量 写到 store
+
   @action
   getArticle(tag, offset = 0) {
     axios.get('/articles', {

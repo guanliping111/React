@@ -1,9 +1,9 @@
 import React from 'react';
-import { Provider } from 'mobx-react';
+import { Provider } from 'mobx-react'
 import articleStore from './store/articleStore';
-import Home from './pages/home';
+import Home from './pages/home'
 import logo from './logo.svg';
-import './util/request';
+import './util/request.js';
 import './App.css';
 
 const store = {
@@ -11,7 +11,7 @@ const store = {
 }
 function App() {
   return (
-    <Provider {...store}>
+    <Provider {...store} >
       <Home />
     </Provider>
   );
