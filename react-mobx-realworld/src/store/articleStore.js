@@ -9,8 +9,8 @@ class ArticleStore  {
   LIMIT = LIMIT;
   @observable articles = {
     all:[],
-    cars:[],
-    tag1:[]
+    tag1:[],
+    tag2:[]
   }
   @observable total = 0;
   // 逻辑 尽量写到 store
