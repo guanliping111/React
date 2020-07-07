@@ -3,12 +3,16 @@ import Mock from 'mockjs';
 
 export default Mock.mock('/posts/','get', {
     success:  true,
-    title: '你真棒！',
-    content: '每天坚持学习',
+    title: 'aaa！',
+    content: 'ddup',
     'list|5-10':[{
+        'name': '@name()',
         'title':'@title()', //随机生成title
+        'address': '@city(true)',
         'email': '@email',
         'id': '@id',
-        'key|+1': 1
+        // "number|1-100": 100
+        'Age': '@integer(0,120)',
+        // 'key|+1': 1
     }]
 });

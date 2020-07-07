@@ -4,6 +4,7 @@ import './App.css';
 //数据跟组件是分离的
 import axios from 'axios';
 import './mock/data.js';
+import { Table, Tag, Space } from 'antd';
 
 // class Dog extends Component {
 //   constructor() {
@@ -99,11 +100,51 @@ import './mock/data.js';
 //有人为他服务
 class Post extends Component {
   render() {
+    const data = this.props.list;
+    const columns = [
+      {
+        title: 'Name',
+        dataIndex: 'name',
+        key: 'name',
+        render: text => <a>{text}</a>,
+      },
+      {
+        title: 'Age',
+        dataIndex: 'Age',
+        key: 'Age',
+      },
+      {
+        title: 'Address',
+        dataIndex: 'address',
+        key: 'address',
+      },
+      {
+        title: 'title',
+        dataIndex: 'title',
+        key: 'title',
+      },
+      {
+        title: 'email',
+        dataIndex: 'email',
+        key: 'email',
+      }, 
+      {
+        title: 'id',
+        dataIndex: 'id',
+        key: 'id',
+      }, 
+      {
+        title: 'Action',
+        key: 'action',
+        render: (text, record) => (
+          <Space size="middle">
+            <a>Delete</a>
+          </Space>
+        ),
+      },
+    ];
     return (
-      <div>
-        <p>{this.props.msg}</p>
-        <p>{this.props.content}</p>
-      </div>
+      <Table columns={columns} dataSource={data} />
     )
   }
 }
@@ -126,7 +167,8 @@ const loadAndRefresh = (url) => (WrappedComponent) => {
       this.state = 
       { 
         msg: '',
-        content: ''
+        content: '',
+        list: ''
       }
     }
     componentDidMount() {
@@ -142,15 +184,17 @@ const loadAndRefresh = (url) => (WrappedComponent) => {
         // console.log(res.data);
         this.setState({
           msg: res.data.title,
-          content: res.data.content
+          content: res.data.content,
+          list:res.data.list
         })
       })
     }
 
     render() {
       const props = {
-        msg: this.state.msg,
-        content: this.state.content
+        msg: this.state.title,
+        content: this.state.content,
+        list:this.state.list
       }
       return (
         <WrappedComponent {...props} />
