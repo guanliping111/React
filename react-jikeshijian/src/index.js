@@ -4,12 +4,10 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'antd/dist/antd.min.css';
-import { DatePicker } from 'antd';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <DatePicker />
   </React.StrictMode>,
   document.getElementById('root')
 );

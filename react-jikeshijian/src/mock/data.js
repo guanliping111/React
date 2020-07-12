@@ -1,14 +1,13 @@
 import Mock from 'mockjs'
  
 export default Mock.mock('/data/','get',{
-    'list|5-10':[{
-       'title':'@title()' ,
+    'list|3-10':[{
+       'title':'@ctitle()' ,
        'finish|1-2':1,
        'learned|0-20':1,
        'lesson|20-40':20,
-       'image':'@image(200*200)',
-        'finished|0-100': 1, //学完
+       'image':Mock.Random.image('80x80', '#ecd9dd', 'image'),
         'type|1-5':1,
-        'index|+1':1
-        }]    
+        'key|+1':1
+    }]    
 })
