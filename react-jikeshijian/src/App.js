@@ -34,22 +34,21 @@ class App extends Component {
   }
   filterLesson(finish) {
     // console.log(typeof finish, finish)
-    if (finish === '0') {
+    if (finish === '0') {//全部课程
       // console.log('dsada')
       this.setState({
         lessons: this.state.allLessons,
         lessons1: this.state.allLessons
       })
     }
-    if (finish === '1' || finish === '2') {
-      console.log('aaaa')
+    if (finish === '1' || finish === '2') { //已学完 or 未学完
+      // console.log('aaaa')
       console.log(this.state.allLessons)
       this.setState({
         lessons: this.state.allLessons.filter(e => (e.finish.toString() === finish)),
         lessons1: this.state.allLessons.filter(e => (e.finish.toString() === finish))
       })
     }
-    // this.setState()
   }
   handleTypeChange(key) {
     // console.log(key, '_________')
@@ -86,7 +85,7 @@ class App extends Component {
             <div>
               <span type="">共{b.lesson}讲</span>|
               <span>已学{b.learned}讲</span>|
-              <span>学完{b.finish}{(Math.round(b.learned / b.lesson * 100) / 100.00)+"%"}</span>
+              <span>学完{b.finish = ((b.learned / b.lesson * 100)).toFixed(2)+"%"}</span>
             </div>
           </div>
         )

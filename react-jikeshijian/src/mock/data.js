@@ -1,8 +1,8 @@
 import Mock from 'mockjs'
  
 export default Mock.mock('/data/','get',{
-    'list|3-10':[{
-       'title':'@ctitle()' ,
+    'list|3-5':[{
+       'title':'@title()' ,
        'finish|1-2':1,
        'learned|0-20':1,
        'lesson|20-40':20,
