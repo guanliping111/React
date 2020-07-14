@@ -1,14 +1,24 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { useCallback } from 'react';
 
+const arr = [1, 2];
+let set = new Set(); //无重复的数据集 = 数组中没有重复的数据
+set.add(1); //在set尾部添加一个1
+set.add(1); //{1}
+console.log(set);
+let set1 = new Set([1,1,1,1,1,2]);
+console.log([...set1]); // ...元素 平铺展开  [1,2]
+
 function Demo() {
     // console.log("render")
-    const arr = [1, 2];
+    
     const [ inputVal, setVal ] = useState('海阔天空'); //输入框内容  设置内容 数组
     const [ listVal, setList ] = useState([]);
     // const val = [1,2];
-    const val = useMemo(() => arr);
-    console.log(val === arr); //true
+    //缓存的时候检查依赖，只有依赖没有变化才会使用上次的值
+    const val = useMemo(() => [1,2], []);
+    set.add(val);
+    console.log(set.size); //3
 
     const handleChange = useCallback((event) => {
         setVal(event.target.value);
