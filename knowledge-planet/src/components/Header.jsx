@@ -7,6 +7,7 @@ class Header extends Component {
     return (
       <div className="header">
         <span>知识星球</span>
+        {/* <span className="iconfont">&#xe501;</span> */}
       </div>
     );
   }

@@ -8,9 +8,9 @@ class Home extends Component {
     state = {  }
     render() { 
         return ( 
-            <div> 
-                <Search /> 
+            <div className="wrapper"> 
                 <Header />
+                <Search /> 
                 <Content />
                 <Footer />
             </div>
