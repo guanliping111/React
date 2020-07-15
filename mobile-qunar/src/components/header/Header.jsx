@@ -4,7 +4,7 @@ import './Header.css';
 
 export default function Header(props) {
     console.log(props.title);
-    const { title } = props;
+    const { title, onBack } = props;
     return (
         <div className="header">
             <div className="header-back">
@@ -23,6 +23,7 @@ export default function Header(props) {
     )
 }
 Header.protoType = {
-    title: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired,
+    onBack: PropTypes.func.isRequired
 }
 

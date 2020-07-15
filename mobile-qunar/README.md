@@ -21,3 +21,43 @@
      形参props
      return(<div></div>)
    - props结构出来的props
+   - 功能函数建议由父组件来打理，纯粹的负责 render
+     函数可以复用
+
+4. 年轻的react-hooks 全新开发方式
+  class Component -> function
+  函数式编程
+  class + construction + 生命周期 + render => function + react hooks魔法函数
+  - useCallback 缓存一个函数
+  - useMemo 
+
+5. 状态组件编写顺序
+
+6. redux 
+   - 简单的redux 项目结构
+     store.js  createStore reducers 
+        中间件 axios redux-thunk 支持异步
+     reducer.js  combineReducers
+     actions.js  数据请求  状态改变的触发都由actions来负责
+        ActionType 可读性
+
+   - redux API  -> 设计状态(reducer + action)
+      初始值 from to  有两个reducerF函数
+      函数 初始值 action return 初始值
+      状态会怎么改变 动作的声明 SET_FROM 
+      - switch case
+      - {type,payload} action
+      - actionType 常量声明 可读性
+      - actions 写出来
+
+   - 数据组件化
+     1. connect 高阶返回原组件
+        connect({
+          mapState,
+          mapDispatch
+        })(Comonent)
+
+      2. 创建组件
+      3. 状态组件，无状态组件重用方法
+
+   - reducer
