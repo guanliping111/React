@@ -1,0 +1,18 @@
+.footer{
+    position: fixed;
+    display: flex;
+    height: 1.6rem;
+    bottom:0;
+    width: 100%;
+    background-color: #fff;
+    color:rgb(133, 130, 130);
+    font-weight: 560;
+  }
+  .footer .footer-item{
+    flex:1;
+    text-align: center;
+  }
+  .footer .footer-item div {
+    display: inline-block;
+    font-size: .7rem;
+  }

@@ -7,9 +7,10 @@ class Header extends Component {
   render() {
     return (
       <div className="header">
-        <p>知识星球
+        <div className="header-text">知识星球</div>
+        <div className="header-aside">
           <span className="iconfont icon-add-sy"></span>
-        </p>
+        </div>
         
       </div>
     );

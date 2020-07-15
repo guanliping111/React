@@ -1,0 +1,62 @@
+.main .add-bar{
+    height: 1.5rem;
+    position: relative;
+    color: rgb(74,75,77);
+    font-weight: 560;
+    font-size: 18px;
+  }
+  .main .add-bar .cancel{
+    position: absolute;
+    left: .4rem;
+    top: .4rem;
+    line-height: 1rem;
+  }
+  .main .add-bar .next{
+    position: absolute;
+    right: .4rem;
+    top: .4rem;
+    width: 2.5rem;
+    height: 1rem;
+    border-radius: 20px;
+    background-color: rgb(34,179,144);
+    text-align: center;
+    line-height: 1rem;
+  }
+  .main .upload{
+    position: relative;
+    width: 5rem;
+    height: 5rem;
+    margin: 1rem auto;
+    background-image: url('./images/4.png');
+    border-radius: 10px;
+  }
+  .main .upload .camera{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(133, 130, 130,0.5);
+    right:-150px;
+    top: 5px;
+    color:#fff;
+    text-align: center;
+    line-height: 30px;
+  }
+  .main .input-bar{
+    display: inline-block;
+    width: 8rem;
+    height: 2rem;
+    position: relative;
+    left:1rem;
+  }
+  .main .input-bar>input{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border:none;
+    font-size: 22px;
+    border-radius: 20px;
+    background-color: rgb(249,249,249);
+    border: 1px solid rgb(139, 137, 137);
+  }
