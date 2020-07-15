@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import Search from '../components/Search';
-import Content from '../components/Content';
+import Header from '../components/header/Header';
+import Footer from '../components/footer/Footer';
+import Search from '../components/search/Search';
+import Content from '../components/content/Content';
 
 class Home extends Component {
     state = {  }

@@ -1,36 +1,5 @@
-/* @font-face {
-  font-family: 'iconfont';
-  src: url('../images/iconfont.eot');
-  src: url('../images/iconfont.eot?#iefix') format('embedded-opentype'),
-      url('../images/iconfont.woff2') format('woff2'),
-      url('../images/iconfont.woff') format('woff'),
-      url('../images/iconfont.ttf') format('truetype'),
-      url('../images/iconfont.svg#iconfont') format('svg');
-}
-.iconfont {
-  font-family: "iconfont" !important;
-  font-size: 16px;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-} */
-* {
-  margin: 0;
-  padding: 0;
-}
-html body {
-  height: 100%;
-  width: 100%;
-}
 .wrapper{
   position: relative;
   width: 100vw;
   height: 100vh;
-}
-.header{
-  font-size: 2rem;
-  justify-content: center;
-  text-align: center;
-  font-family: '宋体'，'黑体', 'Arial';
-  color: aqua;
 }
