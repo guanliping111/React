@@ -28,8 +28,17 @@
   class Component -> function
   函数式编程
   class + construction + 生命周期 + render => function + react hooks魔法函数
-  - useCallback 缓存一个函数
+  - useCallback 缓存一个函数 记忆函数
   - useMemo 
+ 
+      1. useState 返回当前状态的属性和设置状态的方法
+      2. useEffect  依赖里面有没有数据发生变化，没变化就不会发生调用
+      3. useMemo  缓存值 有值 也可缓存函数 要return
+      4. useCallback  缓存函数 不用return
+      5. useContext 获取数据 组件之间共享状态
+      6. useRef ref
+      7. useReducer redux
+
 
 5. 状态组件编写顺序
 
@@ -42,7 +51,7 @@
         ActionType 可读性
 
    - redux API  -> 设计状态(reducer + action)
-      初始值 from to  有两个reducerF函数
+      初始值 from to  有两个reducer函数
       函数 初始值 action return 初始值
       状态会怎么改变 动作的声明 SET_FROM 
       - switch case
@@ -61,3 +70,29 @@
       3. 状态组件，无状态组件重用方法
 
    - reducer
+    1. action标准做法
+    - 返回 { type, payload } 更新reducer 状态
+    - 组件里的事件、生命周期等功能 主要是和数据 状态打交道，归为action来做
+    - 所有的action =>  export function  在组件里引入需要的actions
+    - bindActionCreators 
+      actions 变成本地调用的函数 dispatch
+    - useMemo 缓存函数 return 一个函数
+    - connect 中去第二个参数返回 action
+
+
+
+  1. action
+    from 北京
+    to 上海
+    两个action 思想的切换
+    盯修改的本质 redux
+
+- from to 复盘  
+  1. redux 编程思想
+    - reducers纯函数 fan'huifan 状态及 接受状态的更新
+    那一刻只有一个状态与之相对应 switch case
+    - actions actionTypes
+    是更新reducer的使者 需要 => dispatch一个action
+    from to 都有独立的reducer和action
+    - exchangeFromTo()
+      dispatch getState
