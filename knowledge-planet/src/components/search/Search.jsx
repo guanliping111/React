@@ -9,8 +9,6 @@ class Search extends Component {
       <div className="search">
         <div className="search-input">
           <input text="text" placeholder="搜索用户、星球或内容"></input>
-        </div>
-        <div className="search-img">
           <p className="iconfont icon-sousuo"></p>
         </div>
       </div> 

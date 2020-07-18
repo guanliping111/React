@@ -1,31 +1,25 @@
 .search{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 20rem;
-    height: 2rem;
-    align-items: center;
-    margin-top: 2rem auto;
-    /* position: relative; */
-    
-}
-.search .search-img {
-    position: absolute;
-    width: 1rem;
+    width: 100%;
     height: 1rem;
-    left: -.2rem;
-    margin-right: 4px;
-    margin-top: .4rem;
 }
 .search .search-input{
-    width: 20rem;
+    width: 9rem;
     height: 1rem;
-    border: 1px solid rgb(235,235,235);
-    border-radius:30px;
-    /* 首行文本缩进 */
-    text-indent: 35px;
-    left: -1rem;
-    position: absolute;
-    background-color: RGB(235,237,236);
+    margin: 0 auto;
+    position: relative;
+}
+.search .search-input input{
+    width: 100%;
+    height: 100%;
     outline: none;
+    border: none;
+    border-radius:30px;
+    text-indent: 35px;
+}
+.search .search-input p{
+    position: absolute;
+    display: inline-block;
+    font-size: .6rem;
+    line-height: 1rem;
+    left: .2rem;
 }
