@@ -1,21 +1,22 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useEffect, useState, memo } from 'react';
+// memo 缓存组件
 import { connect } from 'react-redux';
 
- function Recommend(props) {
-     const { recommendList } = props;
-     console.log(recommendList);
+function Recommend(props) {
+    const { recommendList } = props;
+    console.log(recommendList);
     return (
-        <>
-        Recommend
-        </>
+        <React.Fragment>
+            Recommend
+        </React.Fragment>
     )
 }
 const mapStateToProps = (state) => ({
-    recommendList:state.recommend.recommendList
+    recommendList: state.recommend.recommendList
 })
-const mapDispatchToProps = (disaptch) => {
+const mapDispatchToProps = (dispatch) => {
     return {
 
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(useMemo(Recommend));
+export default  connect(mapStateToProps,mapDispatchToProps)(memo(Recommend))

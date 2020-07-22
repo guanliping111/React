@@ -11,4 +11,6 @@
   layout app里总有几套皮肤 匹配那个级别的所有路由的
   routes  react-router-config renderRoutes(route.routes)
 
+  
+  3. styled-components 专门解决切页面 不用过于组件化的方法
      
