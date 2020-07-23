@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.linkage{
+  display: flex;
+
+}
+nav{
+  width: 50px;
+}
+dt{
+  height: 36px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  /* relative + fixed 效果 */
+}
+dd {
+  height: 60px;
+}
+.tab-detail {
+  flex:1;
+  height: 100vh;
+  overflow-y: scroll;
+}
+.active{
+  color: red;
+}
