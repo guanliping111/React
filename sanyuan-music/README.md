@@ -13,4 +13,10 @@
 
   
   3. styled-components 专门解决切页面 不用过于组件化的方法
+
+  4.懒加载
+   react 优化 路由懒加载 
+   先存放不加载 lazy  
+   需要时拿出来Suspense 可 快速打开页面 
+   (放冰箱lazy,提前解冻Suspense) 
      
