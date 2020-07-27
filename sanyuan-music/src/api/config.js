@@ -8,7 +8,7 @@ const axiosInstance = axios.create({
 
 export { axiosInstance }
 
-export const categoryType =
+export const categoryTypes =
     [
         {
           name: "华语男",
