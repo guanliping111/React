@@ -24,3 +24,19 @@
 - 学习别人的代码
 https://github.com/sanyuan0704/react-cloud-music
 1. 加入 global-style.js 文件 全局主题 方便整体更改
+
+
+## 接口业务配置
+- search 业务
+  接口文档
+  - 热门搜索
+    url: /search/hot
+    参数：null
+
+    返回值：result.hot
+  - 搜索建议
+     /suggest?keywords=
+     参数 keyword
+     返回值 albums
+  - 搜索结果
+   /suggest?keywords=

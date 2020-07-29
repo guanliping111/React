@@ -11,4 +11,4 @@ const debounce = (func, delay) => {
     };
   };
   
-  export { debounce };
+export { debounce };

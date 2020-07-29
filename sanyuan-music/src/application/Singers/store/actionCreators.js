@@ -24,7 +24,7 @@ export const changeAlpha = (data) => ({
   type: CHANGE_ALPHA,
   data
 });
-const changeSingerList = (data) => ({
+export const changeSingerList = (data) => ({
   type: CHANGE_SINGER_LIST,
   data: data
 });
@@ -62,6 +62,7 @@ export const getHotSingerList = () => {
       })
     }
 };
+
 export const refreshMoreHotSingerList = () => {
   return (dispatch, getState) => {
     const offset = getState().getIn(['singers', 'listOffset']);
