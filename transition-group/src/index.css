@@ -1,0 +1,44 @@
+.msg-enter {
+  opacity: 0;
+  /* 定义 2D 缩放转换 */
+  transform: scale(0.8);
+}
+.msg-enter-active, .msg-enter-done {
+  opacity: 1;
+  transform: scale(1);
+  /* transition  过渡效果*/
+  transition: all 2000ms;
+}
+ 
+.msg-exit {
+  /* 不透明 */
+  opacity: 1;
+  transform: scale(1);
+}
+.msg-exit-active, .msg-exit-done {
+  /* 完全透明 */
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 2000ms;
+}
+.box{
+  width: 30px;
+  height: 30px;
+  background-color: red;
+}
+
+.tabs-wrap{
+  opacity: 0.01;
+}
+.tabs-wrap-enter-active{
+  opacity: 1;
+  transition: all 500ms;
+}
+.tabs-wrap-exit {
+  transform: rotate(0);
+}
+.tabs-wrap-exit-active {
+  transform: rotate(90deg);
+  transform-origin: top right;
+  transition: all 500ms;
+}
