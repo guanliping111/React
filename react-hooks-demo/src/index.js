@@ -1,6 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { MyComponent } from './demo.js';
+import ReactDom from 'react-dom';
+import './styles.css';
+
+import { MyComponent } from './demo';
 
 function App() {
     return (
@@ -9,6 +11,6 @@ function App() {
         </div>
     )
 }
+
 const rootElement = document.getElementById('root');
-ReactDOM.render(<App />, rootElement);
-   
+ReactDom.render(<App/>, rootElement);
