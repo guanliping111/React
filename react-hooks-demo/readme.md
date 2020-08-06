@@ -5,13 +5,13 @@
   footer script bundle.js
 2. react-scripts
 3. hooks特色
-  - useState
+  - useState 
     ...object
   - useEffect  依赖里面有没有数据发生变化，没变化就不会发生调用
   - useMemo  缓存值
   - useCallback  缓存函数
   - useContext 获取数据 组件之间共享状态
-  - useRef ref
+  - useRef ref DOM
   - useReducer redux
 
 4. 分析react项目是如何运行的
@@ -25,3 +25,9 @@
     组件 递归
     <></>
     文本 退出
+    
+5. 你做项目的时候会碰到什么问题？
+  - 文档 api
+  - 互相尊重
+  - useRef 解决闭包的副作用问题
+  - 接口数据还没有加载完成，用户提前退出，报错
