@@ -5,12 +5,12 @@
   footer script bundle.js
 2. react-scripts
 3. hooks特色
-  - useState 
+  - useState 需要超过两个层级传递 => 用useContext
     ...object
   - useEffect  依赖里面有没有数据发生变化，没变化就不会发生调用
   - useMemo  缓存值
   - useCallback  缓存函数
-  - useContext 获取数据 组件之间共享状态
+  - useContext 获取数据 组件之间共享状态 可跨层级传递
   - useRef ref DOM
   - useReducer redux
 
