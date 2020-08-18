@@ -1,10 +1,9 @@
 // memo 笑脸
-// useMemo 的函数是在渲染期间运行的。不
 import React, { memo } from 'react';
 
 //业务函数
-
 const setSatisfactionClass = (level) => {
+    //结合css理解一下
     //0-99只需要发生一次改变
     if (level < 100) {
         return "very-dissatisfied"
@@ -20,16 +19,18 @@ const setSatisfactionClass = (level) => {
     }
     return "very-satisfied"
 }
-//防止多次渲染
+//防止多次渲染 
+//声明一个 isSameRange 方法来判断两次 props 有什么不同
 //memo会帮我们缓存上一个值，当我们接收一个新的值之后
 // 两个值进行比较 相同 拒绝修改使用已经缓存的东西 不同 则改
 //达到即缓存又更新的能力，
 //这是一个很抽象的函数，也会让我们对memo有更深的理解
 const isSameRange = (prevValue, nextValue) => {
     // console.log(prevValue, nextValue);
-    //setSatisfactionClass class要他生成的一个类名
+    //setSatisfactionClass class 要他生成的一个类名
     // 5个类名表示不同的位置 类名不变 位置就不变
     const prevValueClass = setSatisfactionClass(
+        //传入  prevValue.level
         prevValue.level
     )
     const nextValueClass = setSatisfactionClass(
@@ -37,7 +38,7 @@ const isSameRange = (prevValue, nextValue) => {
     )
     return prevValueClass === nextValueClass
 }
-
+//然后在建一个函数式组件
 export const FaceComponent = memo((props) => {
     //解构level
     //props会频繁的发生改变，使用memo 传入第二个参数
@@ -46,6 +47,7 @@ export const FaceComponent = memo((props) => {
         //盒子
         <div className={setSatisfactionClass(level)}></div>
     )
+    //memo后面加一个函数， isSameRange  这也是一个条件，
 }, isSameRange)//第二个参数 依赖项 上次赋值以来没有改变过，useMemo 会跳过二次调用，只是简单复用它上一次返回的值
 //通过第二个参数指定一个自定义的比较函数来比较新旧 props。如果函数返回 true，就会跳过更新
 //useMemo Hook 允许你通过「记住」上一次计算结果的方式在多次渲染的之间缓存计算结果
