@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="a"></div>
+    <div id="b"></div>
+    <div id="c"></div>
+<script>
+    // 回流
+    const DomA = document.querySelector('#a');
+    const DomB = document.querySelector('#b');
+    const DomC = document.querySelector('#c');
+    function timer() {
+        // 前面没有任何对DomA样式的变更
+        // DomA.style.width = '200px'
+        DomA.style.width = DomA.offsetWidth + 1 + 'px'
+        DomB.style.width = DomA.offsetWidth + 1 + 'px' //offsetWidth
+        DomC.style.width = DomA.offsetWidth + 1 + 'px' //offsetWidth
+
+        // style 最后执行一次 layout
+    }
+    setTimeout(() => {
+        timer();
+    },2000)
+   
+// 复制代码会触发几次回流 ? 3次
+
+let el = document.getElementById('app');
+el.style.width = (el.offsetWidth + 1) + 'px';
+el.style.width = 1 + 'px';
+// 复制代码回引发几次回流?几次重绘?
+
+</script>
+</body>
+</html>
