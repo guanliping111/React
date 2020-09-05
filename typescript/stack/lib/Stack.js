@@ -20,7 +20,7 @@ var Stack = /** @class */ (function () {
     Stack.prototype.push = function (items) {
         this.items.push(items);
     };
-    Stack.prototype.pop = function (items) {
+    Stack.prototype.pop = function () {
         return this.items.pop();
     };
     Stack.prototype.peek = function () {
