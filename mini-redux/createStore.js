@@ -4,6 +4,7 @@ let action1 = {
 let action2 = {
     type: 'DECREMENT'
 }
+//状态
 function reducer(state = 1, action) {
     if (action.type === 'INCREMENT') {
       return state + 1
@@ -13,10 +14,12 @@ function reducer(state = 1, action) {
       return state;
     }
 } 
+
 let store = createStore(reducer);
 store.dispatch(action1);
 console.log(store.getState());
 
+//源码
 //洋葱模型
 function createStore(reducer) {
     let state = undefined;
