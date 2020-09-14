@@ -50,8 +50,9 @@ let nbDispatch = chain(() => {//mid1的默认值 第一个中间件的next
 })
 //mid 返回的是个函数
 //fn3(fn2(fn1()))  中 间件得到的上一个结果 也是个函数
-nbDispatch({a:1})
+nbDispatch({a:1}) //给到mid2
 
+//洋葱模型：从外到内-> 又从内到外冒泡
 
 //输出的结果：
 // mid2 start
