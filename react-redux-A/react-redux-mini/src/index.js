@@ -12,6 +12,7 @@ let action1 = {
 let action2 = {
   type: 'DECREMENT'
 }
+// reducer 修改store中state的值，返回一个新的state的值
 function reducer(state = 1, action) {
   if (action.type === 'INCREMENT') {
     return state + 1
@@ -21,6 +22,7 @@ function reducer(state = 1, action) {
     return state;
   }
 }
+//储存state
 let store = createStore(reducer);
 ReactDOM.render(
   <React.StrictMode>
