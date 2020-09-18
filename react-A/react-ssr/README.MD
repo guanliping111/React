@@ -6,22 +6,28 @@ https://tech.youzan.com/server-side-render/
     用户请求页面 -> 发送请求到服务器 
     -> 后端根据用户和请求信息获取底层服务
     -> 根据服务返回的数据进行组装，同时JSP或FreeMarker模版引擎根据组装的数据渲染为html字符串 
-    -> 应用服务器讲html字符串返回给浏览器 
+    -> 应用服务器将html字符串返回给浏览器 
     -> 浏览器解析html字符串渲染UI及加载静态资源 
     -> js静态资源加载完毕界面可交互。
 
 
-## SPA 客户端渲染
+## SPA 客户端渲染(单页应用) 饿了么 不利于SEO
 vue/react  -> webpack -> html/css/js
 
-html -> <div id="root"></div>
-等js把所有的内容渲染到 root里面去
-用户不能第一时间看到有价值的内容(白屏时间长)
+html -> <div id="root"></div>用户只能看到空标签root节点看不到其他内容
+要等js加载完，把所有的内容渲染到 root里面去
+用户不能第一时间看到有价值的内容(SAP白屏时间长)
 
-## SSR 服务端渲染 优化  美团 网易云
+## SSR 服务端渲染 优化  美团 网易云 懂车帝
 vue/react -> webpack -> 后端(node) 
 用户第一次访问html -> <div id="root">你网页的内容</div>
 用户能第一时间看到有价值的内容(解决白屏时间过长)
+
+什么是SSR？
+    SSR，即服务器渲染，就是在服务器端将对Vue/react页面进行渲染生成html文件，将html页面传递给浏览器。
+SSR两个优点：
+    1. SEO 不同于SPA的HTML只有一个无实际内容的HTML和一个app.js，SSR生成的HTML是有内容的，这让搜索引擎能够索引到页面内容
+    2. 解决白屏时间过长 传统的SPA应用是将bundle.js从服务器获取，然后在客户端解析并挂载到dom。而SSR直接将HTML字符串传递给浏览器。大大加快了首屏加载时间。
 
 识别js代码
 

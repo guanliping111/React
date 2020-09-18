@@ -13,6 +13,7 @@ const app = express();
 //把 public 映射成静态文件的目录
 app.use(express.static('public'))
 
+// get 定义一个路由 * 任意一个路由
 app.get('*',(req, res) => {
     // const root = <Header />
     console.log(req.url)
@@ -26,6 +27,7 @@ app.get('*',(req, res) => {
     //有事件 addEventListener (浏览器自带的API)
     const htmlStr = renderToString(root);
     console.log(htmlStr);
+    //返回html
     res.end(`
         <!DOCTYPE html>
         <html lang="en">
@@ -41,7 +43,7 @@ app.get('*',(req, res) => {
         </html>
     `)
 });
-
+//监听端口
 app.listen(3000, () => {
     console.log('server is running 3000');
 })
