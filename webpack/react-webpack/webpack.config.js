@@ -9,26 +9,31 @@ const webpack = require('webpack');
 //1. 分离基础库(react/react-dom)
 //业务代码：经常变动
 
-//
+//react/reactDom CDN地址 用户缓存时间加长
+//main.js(业务代码) 缓存时间短
 const config = {
   entry: './src/index.js',
   resolve: {
     extensions: ['.js', '.jsx']
   },
-  // externals:{ //排除依赖 打包时 不打包react 体积减小
-  //   react: 'React'
+  // externals:{ //排除依赖 打包时 不打包react react-dom 体积减小
+  //   react: 'React',
+  //   'react-dom':'ReactDom'
   // },
-  //chunk
-  // optimization: {
-  //   splitChunks: {
-  //     chunks: 'all', // all:所有的import  async: import()
-  //     cacheGroups: {
-  //       vendors: {
-  //         test: /[\\/]node_modules[\\/]/,
-  //       },
-  //     }
-  //   }
-  // },
+
+  // chunk
+  //Dll 既可以分离基础库 又可以提升打包速度
+  optimization: {
+    //代码分割
+    splitChunks: {
+      chunks: 'all', //同步的： all 所有的import  异步async: import(xxx).then
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,//打包规则
+        },
+      }
+    }
+  },
   devServer: {
     contentBase: './public',
     hot: true
