@@ -1,0 +1,13 @@
+body {
+    background-color: #fff;
+}
+
+/* css-loade要做的事情 转换  */
+/* 把上面的内容转换成下面的内容格式 */
+/* 
+expotr default `
+    body {
+     background-color: #fff;
+    }
+
+` */
